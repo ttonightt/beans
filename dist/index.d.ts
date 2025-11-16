@@ -1,0 +1,36 @@
+export declare const isIntArray: (arr: any) => arr is Int8Array<ArrayBufferLike> | Uint8Array<ArrayBufferLike> | Uint8ClampedArray<ArrayBufferLike> | Int16Array<ArrayBufferLike> | Uint16Array<ArrayBufferLike> | Int32Array<ArrayBufferLike> | Uint32Array<ArrayBufferLike>;
+export declare const isInt8Array: (arr: any) => arr is Int8Array<ArrayBufferLike> | Uint8Array<ArrayBufferLike> | Uint8ClampedArray<ArrayBufferLike>;
+export declare const isInt16Array: (arr: any) => arr is Int16Array<ArrayBufferLike> | Uint16Array<ArrayBufferLike>;
+export declare const isInt32Array: (arr: any) => arr is Int32Array<ArrayBufferLike> | Uint32Array<ArrayBufferLike>;
+export declare const isFloatArray: (arr: any) => arr is Float32Array<ArrayBufferLike> | Float64Array<ArrayBufferLike>;
+export declare const isBigIntArray: (arr: any) => arr is BigInt64Array<ArrayBufferLike> | BigUint64Array<ArrayBufferLike>;
+export declare const isTypedArray: (arr: any) => arr is Int8Array<ArrayBufferLike> | Uint8Array<ArrayBufferLike> | Uint8ClampedArray<ArrayBufferLike> | Int16Array<ArrayBufferLike> | Uint16Array<ArrayBufferLike> | Int32Array<ArrayBufferLike> | Float32Array<ArrayBufferLike> | BigInt64Array<ArrayBufferLike> | Uint32Array<ArrayBufferLike> | Float64Array<ArrayBufferLike> | BigUint64Array<ArrayBufferLike>;
+export declare const isAnyArray: (arr: any) => arr is any[] | Int8Array<ArrayBufferLike> | Uint8Array<ArrayBufferLike> | Uint8ClampedArray<ArrayBufferLike> | Int16Array<ArrayBufferLike> | Uint16Array<ArrayBufferLike> | Int32Array<ArrayBufferLike> | Float32Array<ArrayBufferLike> | BigInt64Array<ArrayBufferLike> | Uint32Array<ArrayBufferLike> | Float64Array<ArrayBufferLike> | BigUint64Array<ArrayBufferLike>;
+export declare const isIterable: (x: any) => x is string | any[] | Int8Array<ArrayBufferLike> | Uint8Array<ArrayBufferLike> | Uint8ClampedArray<ArrayBufferLike> | Int16Array<ArrayBufferLike> | Uint16Array<ArrayBufferLike> | Int32Array<ArrayBufferLike> | Float32Array<ArrayBufferLike> | BigInt64Array<ArrayBufferLike> | Uint32Array<ArrayBufferLike> | Float64Array<ArrayBufferLike> | BigUint64Array<ArrayBufferLike>;
+export declare const getIntArrayBase: (arr: any) => 8 | 16 | 32;
+export declare const digits: (n: number, radix?: number) => number;
+export declare const b: (data: any, pad: number) => any;
+export declare const clearLastBits: (num: number, bitLength: number) => number;
+export declare const hammingDistance: (a: number, b: number) => number;
+export declare const generateNearestValid: (code: number, max: number) => number[];
+export declare const putBits: (trg: number, src: number, blen: number, ffe: number, ffe0?: number) => number;
+export declare const sliceBits: (num: number, blen: number, ffe: number) => number;
+export declare const ones: (n: number) => number;
+export declare const b8: (data: any) => any;
+export declare const binole: {
+    __2bin(args: any[]): any[];
+    log(...args: any[]): void;
+    error(...args: any[]): void;
+    warn(...args: any[]): void;
+};
+export declare const bitOffset: (ff: number, base: number) => number[];
+export declare const destructByBase: (num: number, ...bases: number[]) => number[];
+export declare const splitByBase: (num: number, ...bases: number[]) => number[];
+export declare const choose: (x: any, cases: any[], values: any[], defaultValue: any) => any;
+export declare const chooseSlope: (x: number, points: number[], values: any[], including: boolean | undefined, defaultValue: any) => any;
+export declare const throwError: (error: any) => never;
+export declare const minmax: (...n: number[]) => number[];
+export declare const rand: (near: number[], far: number) => number;
+export declare const randFrom: (iterable: any, near: number, far: number) => any;
+export declare const Gen: (Cls: ArrayConstructor | StringConstructor, length: number, fn: (i: any, iterable: any) => any) => string | String | any[];
+//# sourceMappingURL=index.d.ts.map
