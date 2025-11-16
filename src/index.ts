@@ -1,5 +1,5 @@
 
-export const isIntArray = arr => (
+export const isIntArray = (arr: any) => (
 	arr instanceof Int8Array ||
 	arr instanceof Uint8Array ||
 	arr instanceof Uint8ClampedArray ||
@@ -9,50 +9,50 @@ export const isIntArray = arr => (
 	arr instanceof Uint32Array
 );
 
-export const isInt8Array = arr => (
+export const isInt8Array = (arr: any) => (
 	arr instanceof Int8Array ||
 	arr instanceof Uint8Array ||
 	arr instanceof Uint8ClampedArray
 );
 
-export const isInt16Array = arr => (
+export const isInt16Array = (arr: any) => (
 	arr instanceof Int16Array ||
 	arr instanceof Uint16Array
 );
 
-export const isInt32Array = arr => (
+export const isInt32Array = (arr: any) => (
 	arr instanceof Int32Array ||
 	arr instanceof Uint32Array
 );
 
-export const isFloatArray = arr => (
+export const isFloatArray = (arr: any) => (
 	arr instanceof Float32Array ||
 	arr instanceof Float64Array
 );
 
-export const isBigIntArray = arr => (
+export const isBigIntArray = (arr: any) => (
 	arr instanceof BigInt64Array ||
 	arr instanceof BigUint64Array
 );
 
-export const isTypedArray = arr => (
+export const isTypedArray = (arr: any) => (
 	isIntArray(arr) ||
 	isFloatArray(arr) ||
 	isBigIntArray(arr)
 );
 
-export const isAnyArray = x => (
-	Array.isArray(x) ||
-	isTypedArray(x)
+export const isAnyArray = (arr: any) => (
+	Array.isArray(arr) ||
+	isTypedArray(arr)
 );
 
-export const isIterable = x => (
+export const isIterable = (x: any) => (
 	typeof x === "string" ||
 	Array.isArray(x) ||
 	isTypedArray(x)
 );
 
-export const getIntArrayBase = arr => {
+export const getIntArrayBase = (arr: any) => {
 
 	if ( isInt8Array(arr) ) return 8;
 	if ( isInt16Array(arr) ) return 16;
@@ -61,7 +61,7 @@ export const getIntArrayBase = arr => {
 	throw "given array doesn't belong to typed int arrays!";
 };
 
-export const digits = (n, radix = 10) => {
+export const digits = (n: number, radix = 10) => {
 
 	if (n === 0) return 1;
 
@@ -75,7 +75,7 @@ export const digits = (n, radix = 10) => {
 	}
 };
 
-const __b = (data, pad, I) => {
+const __b = (data: any, pad: number, I: number) => {
 
 	if (I > 10) return data;
 
@@ -99,14 +99,14 @@ const __b = (data, pad, I) => {
 	return data;
 };
 
-export const b = (data, pad) => __b(data, pad, 0);
+export const b = (data: any, pad: number) => __b(data, pad, 0);
 
-export const clearLastBits = (num, bitLength) => {
+export const clearLastBits = (num: number, bitLength: number) => {
 
 	return (num >> bitLength) << bitLength;
 };
 
-export const hammingDistance = (a, b) => {
+export const hammingDistance = (a: number, b: number) => {
 
 	if (a === b) return 0;
 
@@ -124,7 +124,7 @@ export const hammingDistance = (a, b) => {
 	return b;
 };
 
-export const generateNearestValid = (code, max) => {
+export const generateNearestValid = (code: number, max: number) => {
 
 	const variants = [];
 
@@ -140,7 +140,7 @@ export const generateNearestValid = (code, max) => {
 	return variants;
 };
 
-export const putBits = (trg, src, blen, ffe, ffe0 = 0) => {
+export const putBits = (trg: number, src: number, blen: number, ffe: number, ffe0 = 0) => {
 
 	const ff = blen + ffe;
 
@@ -159,18 +159,18 @@ export const putBits = (trg, src, blen, ffe, ffe0 = 0) => {
 	);
 };
 
-export const sliceBits = (num, blen, ffe) => {
+export const sliceBits = (num: number, blen: number, ffe: number) => {
 
 	return (num >> ffe) % (1 << blen);
 };
 
-export const ones = n => (1 << n) - 1;
+export const ones = (n: number) => (1 << n) - 1;
 
-export const b8 = data => b(data, 8);
+export const b8 = (data: any) => b(data, 8);
 
 export const binole = {
 
-	__2bin (args) {
+	__2bin (args: any[]) {
 
 		return args.map(item => {
 
@@ -184,23 +184,23 @@ export const binole = {
 		});
 	},
 
-	log (...args) {
+	log (...args: any[]) {
 
 		return console.log(...this.__2bin(args));
 	},
 
-	error (...args) {
+	error (...args: any[]) {
 
 		return console.error(...this.__2bin(args));
 	},
 
-	warn (...args) {
+	warn (...args: any[]) {
 
 		return console.warn(...this.__2bin(args));
 	}
 };
 
-export const bitOffset = (ff, base) => {
+export const bitOffset = (ff: number, base: number) => {
 
 	return [
 		ff % base,
@@ -211,7 +211,7 @@ export const bitOffset = (ff, base) => {
 
 
 
-export const destructByBase = (num, ...bases) => {
+export const destructByBase = (num: number, ...bases: number[]) => {
 
 	const pieces = [];
 
@@ -230,7 +230,7 @@ export const destructByBase = (num, ...bases) => {
 	return pieces.reverse();
 };
 
-export const splitByBase = (num, ...bases) => {
+export const splitByBase = (num: number, ...bases: number[]) => {
 
 	const pieces = [];
 
@@ -250,7 +250,7 @@ export const splitByBase = (num, ...bases) => {
 };
 
 
-export const choose = ( x, cases, values, defaultValue ) => {
+export const choose = ( x: any, cases: any[], values: any[], defaultValue: any ) => {
 
 	if ( !(cases.length && values.length && cases.length === values.length) )
 
@@ -267,7 +267,7 @@ export const choose = ( x, cases, values, defaultValue ) => {
 	return defaultValue;
 };
 
-export const chooseSlope = ( x, points, values, including = false, defaultValue ) => {
+export const chooseSlope = ( x: number, points: number[], values: any[], including = false, defaultValue: any ) => {
 
 	if ( !(points.length && values.length && points.length === values.length + 1) )
 
@@ -289,9 +289,9 @@ export const chooseSlope = ( x, points, values, including = false, defaultValue 
 	return defaultValue;
 };
 
-export const throwError = error => { throw error };
+export const throwError = (error: any) => { throw error };
 
-export const minmax = (...n) => {
+export const minmax = (...n: number[]) => {
 
 	let min = n[0], max = n[0];
 
@@ -304,7 +304,7 @@ export const minmax = (...n) => {
 	return [min, max];
 };
 
-export const rand = (near, far) => {
+export const rand = (near: number[], far: number) => {
 
 	const x = Math.random();
 
@@ -331,7 +331,7 @@ export const rand = (near, far) => {
 	return x;
 };
 
-export const randFrom = (iterable, near, far) => {
+export const randFrom = (iterable, near: number, far: number) => {
 
 	const x = Math.random();
 
@@ -363,7 +363,7 @@ export const randFrom = (iterable, near, far) => {
 	throw `the first argument must be an array, typed array or string Got: ${iterable}!`;
 };
 
-export const Gen = (Cls, length, fn) => {
+export const Gen = (Cls: ArrayConstructor | StringConstructor, length: number, fn: (i: any, iterable) => any ) => {
 
 	if ( isAnyArray( Cls.prototype ) ) {
 
