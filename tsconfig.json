@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "ES2020",
     "useDefineForClassFields": true,
     "module": "ESNext",
-    "lib": ["ES2015", "DOM", "DOM.Iterable"],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "types": ["vite/client"],
     "skipLibCheck": true,
     "outDir": "./dist",
@@ -14,11 +14,11 @@
     "skipDefaultLibCheck": true,
 
     /* Bundler mode */
-    "moduleResolution": "node",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
-    "noEmit": true,
+    //"moduleResolution": "node",
+    //"allowImportingTsExtensions": true,
+    //"verbatimModuleSyntax": true,
+    //"moduleDetection": "force",
+    //"noEmit": true,
 
     /* Linting */
     "strict": true,

@@ -3,10 +3,12 @@
   "private": false,
   "version": "0.0.1-dev.1",
   "description": "Functional programming experience enhancement & bit operations",
-  "main": "./src/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.umd.cjs",
+      "require": "./dist/index.cjs",
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
@@ -34,6 +36,7 @@
   "devDependencies": {
     "@types/node": "^24.10.1",
     "vite": "^7.1.7",
+    "vite-plugin-dts": "^4.5.4",
     "vitest": "^3.2.4"
   }
 }
