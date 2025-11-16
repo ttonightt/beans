@@ -1,7 +1,7 @@
 {
   "name": "@ttonightt/beans",
   "private": false,
-  "version": "0.0.1-dev.1",
+  "version": "0.0.1-dev.2",
   "description": "Functional programming experience enhancement & bit operations",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
